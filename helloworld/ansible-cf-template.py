@@ -12,11 +12,11 @@ PublicCidrIp = str(ip_network(get_ip()))
 GithubAccount = "songdet"
 GithubAnsibleUrl = "https://github.com/{}/EffectiveDevops".format(GithubAccount)
 GithubAnsibleFile = "helloworld/ansible/helloworld.yml"
-AnsiblePullCmd = "ansible-pull -U {} {} -i localhost".format(GithubAnsibleUrl, GithubAnsibleFile)
+AnsiblePullCmd = "/usr/local/bin/ansible-pull -U {} {} -i localhost".format(GithubAnsibleUrl, GithubAnsibleFile)
 
 # Create and UserData block to install ansible on start
 ud = Base64(Join('\n', [
-    "#!/bin/bash",
+    "#!/bin/bash -x",
     "yum install --enablerepo=epel -y git",
     "pip install ansible",
     AnsiblePullCmd,
