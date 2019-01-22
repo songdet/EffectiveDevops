@@ -1,5 +1,4 @@
-providee "aws" {
-    use_backend: yum
+provider "aws" {
   region     = "us-east-1"
 }
 
