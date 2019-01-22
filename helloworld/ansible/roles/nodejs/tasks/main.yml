@@ -3,9 +3,7 @@
 
 - name: Installing node and npm
   yum: 
-    name: "{{ item }}"
+    name: ['nodejs', 'npm']
+    use_backend: yum
     enablerepo: epel
     state: installed
-  with_items:
-    - nodejs
-    - npm
