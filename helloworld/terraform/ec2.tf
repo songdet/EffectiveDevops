@@ -1,4 +1,5 @@
-provider "aws" {
+providee "aws" {
+    use_backend: yum
   region     = "us-east-1"
 }
 
@@ -19,8 +20,8 @@ resource "aws_instance" "myserver" {
     }
     inline = [
       "sudo yum install --enablerepo=epel -y git",
-      "sudo pip install ansible-pull"
-      "sudo ansible-pull -U https://github.com/songdet/EffectiveDevops helloworld/ansible/helloworld.yml -i localhost",
+      "sudo pip install ansible",
+      "sudo /usr/local/bin/ansible-pull -U https://github.com/songdet/EffectiveDevops helloworld/ansible/helloworld.yml -i localhost",
     ]
   }
 }
