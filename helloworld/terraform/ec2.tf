@@ -18,7 +18,8 @@ resource "aws_instance" "myserver" {
       private_key = "${file("~/.ssh/id_rsa")}"
     }
     inline = [
-      "sudo yum install --enablerepo=epel -y ansible git",
+      "sudo yum install --enablerepo=epel -y git",
+      "sudo pip install ansible-pull"
       "sudo ansible-pull -U https://github.com/songdet/EffectiveDevops helloworld/ansible/helloworld.yml -i localhost",
     ]
   }
