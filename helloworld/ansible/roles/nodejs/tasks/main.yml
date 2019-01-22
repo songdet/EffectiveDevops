@@ -4,6 +4,5 @@
 - name: Installing node and npm
   yum: 
     name: ['nodejs', 'npm']
-    use_backend: yum
     enablerepo: epel
     state: installed
