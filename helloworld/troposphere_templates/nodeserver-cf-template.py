@@ -18,7 +18,7 @@ ApplicationPort = "3000"
 PublicCidrIp = str(ip_network(get_ip()))
 GithubAccount = "songdet"
 GithubAnsibleUrl = "https://github.com/{}/EffectiveDevops".format(GithubAccount)
-GithubAnsibleFile = "helloworld/ansible/jenkins.yml"
+GithubAnsibleFile = "helloworld/ansible/nodeserver.yml"
 AnsiblePullCmd = "/usr/local/bin/ansible-pull --verbose -U {} {} -i localhost".format(GithubAnsibleUrl, GithubAnsibleFile)
 
 # Create and UserData block to install ansible on start
