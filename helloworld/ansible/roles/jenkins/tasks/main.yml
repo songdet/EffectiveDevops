@@ -22,7 +22,6 @@
 - name: Install Jenkins
   yum:
     name: jenkins
-    enablerepo: jenkins
     state: present
 
 - name: Start Jenkins
