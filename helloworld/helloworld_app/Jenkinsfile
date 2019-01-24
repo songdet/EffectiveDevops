@@ -4,15 +4,16 @@ node {
     stage 'Checkout'
         checkout scm
 
-    stage 'Change directory'
-        cd 'helloworld/helloworld_app'
-
     stage 'Setup'
-        sh 'npm config set registry http://registry.npmjs.org/'
-        sh 'npm install'
+        dir('helloworld/helloworld_app') {
+            sh 'npm config set registry http://registry.npmjs.org/'
+            sh 'npm install'
+        }
 
    stage 'Cleanup'
-        echo 'prune and cleanup'
-        sh 'npm prune'
-        sh 'rm node_modules -rf'
+        dir('helloworld/helloworld_app') {
+            echo 'prune and cleanup'
+            sh 'npm prune'
+            sh 'rm node_modules -rf'
+        }
 }
