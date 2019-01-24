@@ -11,13 +11,13 @@
     name: java-1.8.0-openjdk
     state: present
 
-- name: Add Jenkins repository
-  shell: wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
-
-- name: Import Jenkins GPG key
-  rpm_key:
-    state: present
-    key: https://pkg.jenkins.io/redhat/jenkins.io.key
+#- name: Add Jenkins repository
+#  shell: wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+#
+#- name: Import Jenkins GPG key
+#  rpm_key:
+#    state: present
+#    key: https://pkg.jenkins.io/redhat/jenkins.io.key
 
 - name: Install Jenkins
   yum:
