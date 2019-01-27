@@ -3,3 +3,4 @@
 *.template
 *.tfstate
 *.tfstate.backup
+.auto.tfvars
